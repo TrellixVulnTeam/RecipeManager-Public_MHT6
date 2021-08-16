@@ -1,0 +1,31 @@
+{
+  "name": "recipemanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass src/sass/main.scss style.css -w",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PascaleStark/RecipeManager.git"
+  },
+  "author": "Pascale Stark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PascaleStark/RecipeManager/issues"
+  },
+  "homepage": "https://github.com/PascaleStark/RecipeManager#readme",
+  "dependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "node-sass": "^5.0.0",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0"
+  }
+}

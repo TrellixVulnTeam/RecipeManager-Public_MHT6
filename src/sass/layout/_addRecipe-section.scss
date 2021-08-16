@@ -1,0 +1,181 @@
+.add-recipe-view {
+  @include position-modal-element;
+
+  @include respond(tab-land) {
+    width: 98vw;
+  }
+  @include respond(phone) {
+    margin: 5rem 0;
+    width: 95vw;
+    padding: 3rem 4rem;
+  }
+
+  .icon__close-outline {
+    @include icon-close-position;
+  }
+
+  &__form {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 9rem;
+    grid-row-gap: 2rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
+    &--information {
+      justify-self: center;
+
+      @include respond(tab-port) {
+        justify-self: start;
+      }
+    }
+
+    &--details {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: $font-size-primary;
+      color: $color-font-primary;
+      margin-bottom: 1rem;
+    }
+
+    input,
+    textarea,
+    select {
+      padding: 0.5rem 1.5rem;
+      border: 1px solid $color-grey-lighter;
+      border-radius: 3px;
+      box-shadow: 0.5rem 0.5rem 1.5rem 3px rgba(0, 0, 0, 0.2);
+      outline: none;
+      font-family: inherit;
+      font-size: $font-size-primary;
+      color: $color-font-primary;
+      margin-bottom: 2rem;
+      transition: all 0.2s;
+
+      &[type="text"],
+      &[type="url"],
+      &[type="file"] {
+        min-width: 36rem;
+
+        @include respond(tab-land) {
+          min-width: 30rem;
+        }
+
+        @include respond(tab-port) {
+          min-width: 50rem;
+          padding: 1.5rem;
+        }
+
+        @include respond(phone) {
+          min-width: 35rem;
+          padding: 2rem 1.5rem;
+        }
+        @include respond(phone-small) {
+          min-width: 30rem;
+          max-width: 30rem;
+        }
+      }
+
+      &::placeholder {
+        color: $color-font-lighter;
+      }
+      &:focus {
+        border: 1px solid $color-salmon-primary;
+      }
+      &:focus::placeholder {
+        color: transparent;
+      }
+    }
+
+    textarea {
+      resize: none;
+
+      &#ingredients,
+      &#directions {
+        width: 60rem;
+        height: 20rem;
+
+        @include respond(tab-port) {
+          width: 45rem;
+          height: 20rem;
+        }
+
+        @include respond(phone) {
+          width: 35rem;
+          height: 10rem;
+        }
+
+        @include respond(phone-small) {
+          width: 25rem;
+          height: 20rem;
+        }
+      }
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      transform: translateY(0.2rem);
+    }
+    button {
+      background-color: $color-salmon-primary;
+      transform: translateY(1.5rem);
+
+      &:hover {
+        box-shadow: 0.5rem 0.5rem 1.5rem 3px rgba(0, 0, 0, 0.2);
+      }
+    }
+    &--btn {
+      grid-column: 1 / -1;
+      justify-self: end;
+      margin: 2rem 0 2rem 2rem;
+
+      @include respond(phone) {
+        margin-top: -1rem;
+        justify-self: center;
+      }
+    }
+  }
+}
+
+.file-restrictions {
+  font-family: inherit;
+  font-size: $font-size-primary;
+  color: $color-font-primary;
+  margin-top: -1rem;
+}
+
+.required-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: $color-salmon-primary;
+}
+
+// MOVE TO OWN FILE
+.sub-message {
+  display: flex;
+  //animation: slide ease-in 0.2s;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  p {
+    font-size: 2rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__icon {
+    transform: translateY(0.5rem);
+  }
+  &__btn {
+    @include btn-error;
+  }
+}

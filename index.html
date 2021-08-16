@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./dist/main.js"></script>
+    <title>Recipe Manager</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <!-- credit hatchful.shopify.com -->
+        <img src="./src/img/logo.png" alt="Recipe-logo" class="header__img" />
+      </div>
+      <h1 class="heading--primary">Recipe Manager</h1>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__add-recipe">
+            <button class="btn nav__add-recipe--btn">
+              <svg class="icon icon-plus">
+                <use xlink:href="./src/img/icons.svg#icon-plus"></use></svg
+              >Add Recipe
+            </button>
+          </li>
+          <li class="nav__favourites">
+            <button class="btn nav__favourites--btn">
+              <svg class="icon icon-heart">
+                <use xlink:href="./src/img/icons.svg#icon-heart"></use></svg
+              >Favourites
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="hamburger-menu">
+        <svg class="icon hamburger-menu--icon">
+          <use xlink:href="./src/img/icons.svg#icon-menu"></use>
+        </svg>
+      </div>
+      <form class="search">
+        <input
+          type="text"
+          name="search-input"
+          class="search__input"
+          placeholder="Search recipes"
+          required
+        />
+        <button class="search__btn">
+          <svg class="icon search__icon">
+            <use xlink:href="./src/img/icons.svg#icon-magnifying-glass"></use>
+          </svg>
+        </button>
+      </form>
+    </main>
+
+    <section class="results">
+      <h2 class="results__heading heading--secondary"></h2>
+      <div class="results__header dropdown">
+        <ul>
+          <li class="dropdown">
+            <button class="btn dropdown__btn">
+              <!-- credit icomoon.io -->
+              <svg class="icon">
+                <use
+                  xlink:href="./src/img/icons.svg#icon-chevron-thin-down"
+                ></use></svg
+              >Filter
+            </button>
+
+            <div class="dropdown__filters scale-filters">
+              <button class="dropdown__category">Breakfast</button>
+              <button class="dropdown__category">Main Dish</button>
+              <button class="dropdown__category">Side Dish</button>
+              <button class="dropdown__category">Soup</button>
+              <button class="dropdown__category">Salad</button>
+              <button class="dropdown__category">Dessert</button>
+              <button class="dropdown__category">Appetizer</button>
+              <button class="dropdown__category">Bread</button>
+              <button class="dropdown__category">Beverage</button>
+              <button class="dropdown__category">Holidays</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="results__container">
+        <div class="recipe">
+          <div class="recipe__container">
+            <!-- FOR TESTING PURPOSES -->
+            <!-- <div class="recipe__card">
+              <img
+                src="./src/img/brisket.jpg"
+                class="recipe__card--img"
+                alt="recipe img"
+              />
+              <svg class="icon icon-heart recipe__card--icon">
+                <use xlink:href="./src/img/icons.svg#icon-heart"></use>
+              </svg>
+              <h3 class="recipe__card--title heading--tertiary">
+                Lebanese Beef Shawarma
+              </h3>
+              <div class="recipe__card--back">
+                <button class="btn recipe__card--btn">
+                  <span class="underline">View Recipe &rarr;</span>
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <!-- <a href="#" class="pagination__link"
+          ><svg class="icon pagination__icon">
+            <use
+              xlink:href="./src/img/icons.svg#icon-arrow-thin-left"
+            ></use></svg
+        ></a>
+        <a href="#" class="pagination__link">1</a>
+        <a href="#" class="pagination__link">2</a>
+        <a href="#" class="pagination__link">3</a>
+        <a href="#" class="pagination__link">4</a>
+        <a href="#" class="pagination__link">5</a>
+        <a href="#" class="pagination__link">6</a>
+        <a href="#" class="pagination__link"
+          ><svg class="icon pagination__icon">
+            <use
+              xlink:href="./src/img/icons.svg#icon-arrow-thin-right"
+            ></use></svg
+        ></a> -->
+      </div>
+    </section>
+
+    <div class="modal-view">
+      <div class="recipe-view hidden"></div>
+    </div>
+
+    <div class="modal-view">
+      <div class="add-recipe-view">
+        <svg class="icon icon__close-outline icon__close-form">
+          <use xlink:href="./src/img/icons.svg#icon-close-outline"></use>
+        </svg>
+        <h1 class="heading--secondary u-marg-b-heading">Add recipe</h1>
+        <h2 class="heading--tertiary u-marg-b-heading">Recipe information</h2>
+
+        <form class="add-recipe-view__form">
+          <div class="add-recipe-view__form--information">
+            <label for="title">
+              <svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Title<span class="required-text">(required)</span></label
+            >
+            <input
+              id="title"
+              type="text"
+              name="name"
+              minlength="2"
+              maxlength="45"
+              placeholder="e.g: Baked chicken wings"
+              required
+            /><br /><br />
+
+            <label for="publisher"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Publisher</label
+            >
+            <input
+              id="publisher"
+              name="addedBy"
+              type="text"
+              maxlength="20"
+              placeholder="e.g: John Doe"
+            /><br /><br />
+
+            <label for="category"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Category</label
+            >
+            <div class="category-select">
+              <select id="category" name="category" required>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Main Dish">Main Dish</option>
+                <option value="Side Dish">Side Dish</option>
+                <option value="Soup">Soup</option>
+                <option value="Salad">Salad</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Appetizer">Appetizer</option>
+                <option value="Bread">Bread</option>
+                <option value="Beverage">Beverage</option>
+                <option value="Holidays">Holidays</option>
+              </select>
+            </div>
+          </div>
+          <div class="add-recipe-view__form--information">
+            <label for="prepTime"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Preparation Time</label
+            >
+            <input
+              id="prepTime"
+              name="prepTime"
+              type="text"
+              maxlength="15"
+              placeholder="e.g: 30 mins"
+            /><br /><br />
+
+            <label for="cookingTime"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Cooking Time</label
+            >
+            <input
+              id="cookingTime"
+              name="cookingTime"
+              type="text"
+              maxlength="15"
+              placeholder="e.g: 45 mins"
+            /><br /><br />
+
+            <label for="servings"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Servings</label
+            >
+            <input
+              id="servings"
+              name="servings"
+              type="text"
+              maxlength="15"
+              placeholder="e.g: 4"
+            /><br /><br />
+          </div>
+
+          <div class="add-recipe-view__form--details">
+            <label for="ingredients"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Ingredients <span class="required-text">(required)</span></label
+            >
+            <textarea
+              id="ingredients"
+              name="ingredients"
+              placeholder="use this format: quantity unit ingredient#quantity unit ingredient"
+              required
+            ></textarea>
+          </div>
+          <div class="add-recipe-view__form--details">
+            <label for="directions"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Directions<span class="required-text">(required)</span></label
+            >
+            <textarea
+              id="directions"
+              name="directions"
+              placeholder="use this format: quantity unit ingredient#quantity unit ingredient..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="add-recipe-view__form--information">
+            <label for="url"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >URL</label
+            >
+            <input
+              id="url"
+              type="url"
+              placeholder="e.g: https://www.johnDoe.com/recipes/chicken-wings"
+              name="url"
+            /><br /><br />
+          </div>
+
+          <div class="add-recipe-view__form--information">
+            <label for="file"
+              ><svg class="icon icon__compose">
+                <use xlink:href="./src/img/icons.svg#icon-compose"></use></svg
+              >Upload photo</label
+            >
+            <input
+              id="file"
+              type="file"
+              name="file"
+              accept="image/png, image/jpeg, image/jpg"
+            /><br /><br />
+            <div class="file-restrictions">
+              jpg, png, and jpeg files. Max size: 20MB
+            </div>
+          </div>
+
+          <div class="add-recipe-view__form--btn">
+            <button class="btn btn--form">
+              <span class="underline">Submit &rarr;</span>
+            </button>
+          </div>
+          <input type="hidden" id="id" name="id" value="" />
+        </form>
+        <!-- <div class="sub-message">
+          <svg class="icon icon__close-outline icon__close-form">
+            <use xlink:href="./src/img/icons.svg#icon-close-outline"></use>
+          </svg>
+
+          <p class="sub-message__msg">
+            <svg class="icon sub-message__icon">
+              <use
+                xlink:href="./src/img/icons.svg#icon-checkmark-outline"
+              ></use>
+            </svg>
+            Your recipe has been posted successfully!
+          </p>
+          <div class="sub-message__img">
+            <img src="./src/img/balloon.gif" alt="hot-air-balloon" />
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="menu-section hidden">
+      <div class="menu-view">
+        <svg class="icon icon__close-outline menu-view__icon">
+          <use xlink:href="./src/img/icons.svg#icon-close-outline"></use>
+        </svg>
+
+        <h2 class="heading--menu">
+          <svg class="icon menu-view__icon--home">
+            <use xlink:href="./src/img/icons.svg#icon-home"></use></svg
+          >Menu
+        </h2>
+        <div class="menu-view__container">
+          <ul class="menu-view__list">
+            <li class="menu-view__list--item">
+              <a href="#" class="menu-view__list--link addrecipe">Add recipe</a>
+            </li>
+            <li class="menu-view__list--item">
+              <a
+                href="#"
+                class="menu-view__list--link menu-view__list--favourites"
+                >Favourites</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="spinner">
+      <svg class="spinner__icon">
+        <use xlink:href="./src/img/icons.svg#icon-spinner3"></use>
+      </svg>
+    </div> -->
+
+    <div class="modal-view">
+      <div class="modal-view__msg hidden">
+        <p>
+          <svg class="icon">
+            <use xlink:href="./src/img/icons.svg#icon-warning"></use></svg
+          >Are you sure you want to delete this recipe?
+        </p>
+        <div class="modal-view__container-btn">
+          <button
+            class="
+              modal-view__container-btn--btn
+              modal-view__container-btn--btn-cancel
+            "
+          >
+            Cancel
+          </button>
+          <button
+            class="
+              modal-view__container-btn--btn modal-view__container-btn--btn-yes
+            "
+            id="btn-confirm"
+            data-id=""
+          >
+            yes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-modal hidden">
+      <!-- <div class="error-modal__container">
+        <h1>
+          <svg class="icon error-modal__icon">
+            <use xlink:href="./src/img/icons.svg#icon-warning"></use></svg
+          >ERROR
+        </h1>
+        <p class="error-modal__msg">THIS IS FOR TESTING. WILL BE DYNAMIC</p>
+        <button class="error-modal__btn">OK</button>
+      </div> -->
+    </div>
+
+    <footer class="footer">
+      <div class="footer__text">&#169; 2021 Pascale Stark</div>
+    </footer>
+  </body>
+</html>

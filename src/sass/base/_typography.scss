@@ -1,0 +1,103 @@
+.heading--primary {
+  font-size: 3.5rem;
+  font-weight: bolder;
+  font-family: inherit;
+  color: $color-salmon-primary;
+  text-align: center;
+  margin: 0 14rem;
+
+  @include respond(tab-land) {
+    font-size: 3rem;
+    margin: 0 6rem;
+  }
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+    margin: 0 2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+    margin: 0 2.5rem;
+  }
+}
+
+.heading--secondary {
+  font-size: 3rem;
+  font-weight: bolder;
+  font-family: inherit;
+  color: $color-salmon-primary;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include respond(tab-land) {
+    font-size: 2.5rem;
+  }
+
+  @include respond(tab-port) {
+    font-size: 2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+}
+
+.heading--tertiary {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  font-family: inherit;
+  color: $color-salmon-primary;
+  text-transform: uppercase;
+
+  @include respond(tab-land) {
+    font-size: 2rem;
+  }
+
+  @include respond(tab-port) {
+    font-size: 1.5rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}
+
+.heading--menu {
+  font-size: 2.5rem;
+  font-family: inherit;
+  color: $color-grey-light;
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+}
+
+.icon {
+  z-index: 1;
+  height: 2.2rem;
+  width: 2.2rem;
+  margin-right: 1rem;
+  fill: $color-salmon-primary;
+
+  &:hover {
+    //fill: $color-salmon-primary;
+  }
+}
+
+.text-bolder {
+  font-weight: bolder;
+}
+
+.list-style {
+  list-style-type: none;
+  font-size: 1.8rem;
+  padding: 3rem 1rem;
+  border: 2px solid $color-font-primary;
+
+  li {
+    padding: 0.5rem;
+    color: $color-font-primary;
+
+    @include respond(phone) {
+      padding: 0;
+    }
+  }
+}

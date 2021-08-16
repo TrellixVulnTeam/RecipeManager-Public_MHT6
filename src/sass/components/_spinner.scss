@@ -1,0 +1,13 @@
+.spinner {
+  height: 100vh;
+  padding-top: 12rem;
+  margin-left: 50%;
+  grid-column: 2 / 3;
+
+  &__icon {
+    height: 6rem;
+    width: 6rem;
+    fill: $color-salmon-primary;
+    animation: spin 2s infinite linear;
+  }
+}

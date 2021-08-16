@@ -1,0 +1,40 @@
+.underline {
+  border-bottom: 2px solid $color-font-primary;
+}
+
+.u-marg-b-heading {
+  margin-bottom: 3rem;
+}
+
+.my-body-noscroll-class {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.empty-icon {
+  fill: $color-transparent-grey;
+}
+
+.filled-icon {
+  fill: $color-salmon-primary;
+}
+
+.scale-filters {
+  transform: scale(0);
+}
+
+.scale-back {
+  transform: scale(1);
+}
+
+.active {
+  background-color: $color-salmon-primary;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
