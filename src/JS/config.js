@@ -1,3 +1,3 @@
-export const URL = "http://192.168.4.10:443/recipes";
+export const URL = "http://24.200.56.169:443/recipes";
 
 export const TIMEOUT = 1500;
