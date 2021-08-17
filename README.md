@@ -1,5 +1,8 @@
 # RecipeManager
 
+# Live Project
+click [here](http://24.200.56.169/RecipeManager-Public/)
+
 # Description
 This is an application that allows the user to organize recipes. The application was designed from scratch (a blank HTML page). It was built using HTML5, SASS (CSS preprocessor), and for the biggest part, Vanilla JavaScript. The JS code is managed according to a Model-View-Controller (MVC) architecture pattern to account for scalability, maintainability and expandability. To bundle scripts, the application uses Webpack module bundler.
 
